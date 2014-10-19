@@ -88,60 +88,6 @@ var config = {
 };
 ```
 
-### Options
-
-#### options.file
-
-Type: `String`
-
-Default: `'./package.json'`
-
-The path to the package file from where we extract the current version.
-
-
-#### options.prefix
-
-Type: `String`
-
-Default: `'pre-release-v'`
-
-The prefix for the generated tags. A version of `0.0.1` will generate the tag `pre-release-v0.0.1`.
-
-
-#### options.commitFiles:
-
-Type: `Array`
-
-Default: `['CHANGELOG.md', 'package.json']`
-
-After invoking the `bump-only:something` and `changelog` task we expect these files to be modified and we will commit
-them. If the local checkout is still dirty after this commit, the plugin will abort.
-
-
-#### options.commitMessage:
-
-Type: `Array`
-
-Default: `chore: git-is-clean`
-
-The commit message.
-
-
-#### options.push
-
-Type: `Boolean`
-
-Default: `true`
-
-If you don't want the plugin to push the tags, set this to `false`.
-
-
-## Roadmap
-
-- a better solution for invoking bump + .
-- test coverage for all configuration options.
-
-
 ## [MIT License](LICENSE-MIT)
 
 [Copyright (c) 2014 Andre Torgal](http://andrezero.mit-license.org/2014)
