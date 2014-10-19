@@ -1,0 +1,49 @@
+{
+  "name": "grunt-git-is-clean",
+  "version": "0.1.0",
+  "description": "Just a little Grunt utility to check if checkout is clean.",
+  "author": {
+    "name": "Andre Torgal",
+    "url": "http://andretorgal.com/"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://andrezero.mit-license.org"
+    }
+  ],
+  "keywords": [
+    "grunt",
+    "gruntfile",
+    "utility",
+    "config",
+    "loader"
+  ],
+  "homepage": "https://github.com/andrezero/grunt-git-is-clean",
+  "bugs": "https://github.com/andrezero/grunt-git-is-clean/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrezero/grunt-git-is-clean"
+  },
+  "readmeFilename": "README.md",
+  "files": [
+    "LICENSE-MIT",
+    "tasks"
+  ],
+  "main": "tasks/grunt-git-is-clean.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.2",
+    "grunt-cli": "^0.1.12",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-jsbeautifier": "~0.2.4",
+    "load-grunt-tasks": "~0.6.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
