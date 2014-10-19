@@ -15,9 +15,8 @@
   "keywords": [
     "grunt",
     "gruntfile",
-    "utility",
-    "config",
-    "loader"
+    "git",
+    "release"
   ],
   "homepage": "https://github.com/andrezero/grunt-git-is-clean",
   "bugs": "https://github.com/andrezero/grunt-git-is-clean/issues",
