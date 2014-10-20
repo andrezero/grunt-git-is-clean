@@ -1,6 +1,6 @@
 {
   "name": "grunt-git-is-clean",
-  "version": "0.1.1",
+  "version": "0.1.2-0",
   "description": "Just a little Grunt utility to check if checkout is clean.",
   "author": {
     "name": "Andre Torgal",
