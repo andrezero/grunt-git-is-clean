@@ -1,10 +1,14 @@
 language: node_js
 node_js:
-  - "0.10"
-
-branches:
-  only:
-    - master
-
+- '0.10'
 script:
-  - grunt build
+- grunt ci-build
+deploy:
+  provider: npm
+  email: andre.torgal@gmail.com
+  api_key:
+    secure: EMrRc9kcDBYC6hLuiWYAwz/cjrk6BpcV082nkwlrM+q+SICBaLLU1xmnikKG+yZpda9O2yL0dkwkM+lzzAps9KXPWHoIJu7jcDGhLC1ohDxKxn1OexZd1X1EAWpR4nT0ju2m+c36BhNs3cv3QLrYVXU/b4resg41IYzVhYtJpIo=
+  on:
+    tags: true
+    all_branches: true
+    repo: andrezero/grunt-jsglue

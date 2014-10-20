@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 
         var done = this.async();
 
-        exec('git describe --tags --always --long --dirty', function(err, stdout, stderr) {
+        exec('git describe --tags --always --long --dirty', function (err, stdout, stderr) {
             if (err) {
                 grunt.fail.fatal('Could not check for repo dirtyness:\n  ' + err);
             }
@@ -18,4 +18,5 @@ module.exports = function (grunt) {
             done();
         });
     });
-}
+};
+

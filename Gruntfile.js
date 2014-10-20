@@ -6,16 +6,26 @@ module.exports = function (grunt) {
 
     var config = {
 
+        pkg: require('./package.json'),
+
+        files: {
+
+            js_src: ['tasks/*.js'],
+            js_grunt: ['Gruntfile.js'],
+            js_all: [
+                'package.json',
+                '<%= files.js_src %>',
+                '<%= files.js_grunt %>'
+            ]
+        },
+
         jshint: {
 
             options: {
                 jshintrc: '.jshintrc'
             },
 
-            all: [
-                'Gruntfile.js',
-                'lib/*.js'
-            ]
+            all: '<%= files.js_all %>'
         },
 
         jsbeautifier: {
@@ -25,27 +35,77 @@ module.exports = function (grunt) {
             },
 
             modify: {
-                src: [
-                    'Gruntfile.js',
-                    'lib/*.js'
-                ]
+                src: ['<%= files.js_src %>', '<%= files.js_grunt %>']
             },
 
             verify: {
-                src: [
-                    'Gruntfile.js',
-                    'lib/*.js'
-                ],
+                src: ['<%= files.js_src %>', '<%= files.js_grunt %>'],
                 options: {
                     mode: 'VERIFY_ONLY'
                 }
             }
+        },
+
+        bump: {
+
+            options: {
+
+                files: [
+                    'package.json'
+                ],
+                updateConfigs: ['pkg'],
+                commit: true,
+                commitMessage: 'chore(release): v%VERSION%',
+                commitFiles: [
+                    'package.json',
+                    'CHANGELOG.md'
+                ],
+                createTag: true,
+                tagName: 'v%VERSION%',
+                tagMessage: 'Version %VERSION%',
+                push: true,
+                pushTo: 'origin'
+            }
+        },
+
+        changelog: {
+
+            options: {
+                dest: 'CHANGELOG.md',
+                template: 'changelog.tpl'
+            }
         }
     };
 
-    grunt.registerTask('build', ['jshint', 'jsbeautifier']);
-
     grunt.initConfig(config);
+
+    grunt.registerTask('test', [
+
+    ]);
+
+    grunt.registerTask('build', [
+        'jshint',
+        'jsbeautifier',
+        'test'
+    ]);
+
+    grunt.registerTask('pre-release', [
+        'git-is-clean',
+        'build',
+        'bump-only:prerelease',
+        'changelog',
+        'bump-commit'
+    ]);
+
+    grunt.registerTask('ci-build', ['build']);
+
+    grunt.registerTask('release', [
+        'git-is-clean',
+        'build',
+        'bump-only:patch',
+        'changelog',
+        'bump-commit'
+    ]);
 
 };
 
