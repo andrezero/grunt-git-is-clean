@@ -7,8 +7,8 @@ deploy:
   provider: npm
   email: andre.torgal@gmail.com
   api_key:
-    secure: EMrRc9kcDBYC6hLuiWYAwz/cjrk6BpcV082nkwlrM+q+SICBaLLU1xmnikKG+yZpda9O2yL0dkwkM+lzzAps9KXPWHoIJu7jcDGhLC1ohDxKxn1OexZd1X1EAWpR4nT0ju2m+c36BhNs3cv3QLrYVXU/b4resg41IYzVhYtJpIo=
+    secure: mavqHBhOw+xlbkB3QIusFd3vFM/ZOZNxucyF4eHhY13X0uaJz1wULg5tmLy3QEfLX4SmvMJOymwj/ScCtAIhcbD5n2ts0B65CrrwYMEuf5pdStjc7LDcucl8QcGZISn5uyBwqDVaiRQ4EqAY6RFfE8zT6hb4l0vlU4o5bFiChs4=
   on:
     tags: true
     all_branches: true
-    repo: andrezero/grunt-jsglue
+    repo: andrezero/grunt-git-is-clean
