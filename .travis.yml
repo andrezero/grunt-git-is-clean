@@ -3,12 +3,3 @@ node_js:
 - '0.10'
 script:
 - grunt ci-build
-deploy:
-  provider: npm
-  email: andre.torgal@gmail.com
-  api_key:
-    secure: mavqHBhOw+xlbkB3QIusFd3vFM/ZOZNxucyF4eHhY13X0uaJz1wULg5tmLy3QEfLX4SmvMJOymwj/ScCtAIhcbD5n2ts0B65CrrwYMEuf5pdStjc7LDcucl8QcGZISn5uyBwqDVaiRQ4EqAY6RFfE8zT6hb4l0vlU4o5bFiChs4=
-  on:
-    tags: true
-    all_branches: true
-    repo: andrezero/grunt-git-is-clean
