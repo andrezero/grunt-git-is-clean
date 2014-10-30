@@ -11,13 +11,13 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a
 [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins.
 
-1. Install the plugin with this command:
+Install the plugin with this command:
 
 ```shell
 npm install grunt-git-is-clean --save-dev
 ```
 
-2. Add this line to your project's `Gruntfile.js` gruntfile:
+Add this line to your project's `Gruntfile.js` gruntfile:
 
 ```javascript
 grunt.loadNpmTasks('grunt-git-is-clean');
