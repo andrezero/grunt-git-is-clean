@@ -27,65 +27,36 @@ grunt.loadNpmTasks('grunt-git-is-clean');
 
 _Run this task with the `grunt git-is-clean` command._
 
-_Note: there are no task targets, files and options for this task.
+_Note: there are no task targets, files or options for this task._
 
 
 ### Overview
 
-This task aborts the build if current checkout is unclean. Useful to make sure everything is predictable while doing
-stuff like pre-releases and releases.
+This purpose of this task is to abort a build if the current checkout is unclean. Useful to make sure everything is
+predictable while doing sensitive operations like automated releases.
+
 
 ### Example
 
 Assuming you are using the [bump](https://github.com/vojtajina/grunt-bump) and
 [conventional-changelog](https://github.com/btford/grunt-conventional-changelog) tasks to tag a pre-release:
 
-
 ```javascript
-grunt.registerTask('release', ['build', 'test', 'git-is-clean', 'bump-only:prerelease', 'changelog', 'bump-commit']);
+grunt.registerTask('release', [
+    'build',
+    'test',
+    'git-is-clean',
+    'bump-only:minor',
+    'changelog',
+    'bump-commit'
+]);
 ```
 
+If the repository is dirty the task is aborted before running any tasks that have side-effects.
+
 ```
-$ grunt release:patch
-$ grunt release:minor
-$ grunt release:major
-```
-
-Here's an example configuration:
-
-```javascript
-var config = {
-
-    bump: {
-
-        options: {
-
-            files: [
-                'package.json'
-            ],
-            updateConfigs: ['pkg'],
-            commit: true,
-            commitMessage: 'chore(release): v%VERSION%',
-            commitFiles: [
-                'package.json',
-                'CHANGELOG.md'
-            ],
-            createTag: true,
-            tagName: 'v%VERSION%',
-            tagMessage: 'Version %VERSION%',
-            push: true,
-            pushTo: 'origin'
-        }
-    },
-
-    changelog: {
-
-        options: {
-            dest: 'CHANGELOG.md',
-            template: 'changelog.tpl'
-        }
-    }
-};
+Running "git-is-clean" task
+Fatal error: Repository is dirty.
 ```
 
 ## [MIT License](LICENSE-MIT)
