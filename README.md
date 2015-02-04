@@ -1,4 +1,7 @@
-# grunt-git-is-clean [![Build Status: Linux](http://img.shields.io/travis/andrezero/grunt-git-is-clean/master.svg?style=flat-square)](https://travis-ci.org/andrezero/grunt-git-is-clean) [![npm version](http://img.shields.io/npm/v/grunt-git-is-clean.svg?style=flat-square)](https://npmjs.org/grunt-git-is-clean)
+# grunt-git-is-clean
+
+[![Build Status: Linux](http://img.shields.io/travis/andrezero/grunt-git-is-clean/master.svg?style=flat-square)](https://travis-ci.org/andrezero/grunt-git-is-clean)
+[![NPM version](http://img.shields.io/npm/v/grunt-git-is-clean.svg?style=flat-square)](https://npmjs.org/grunt-git-is-clean)
 
 > Grunt task: checks if repository checkout is clean.
 
