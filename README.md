@@ -6,6 +6,10 @@
 > Grunt task: checks if repository checkout is clean.
 
 
+## WARNING: This code is not maintained
+
+Very obvious - but due - WARNING. Time flies, the world revolves, grunt became gulp became webpack, yada yada. Good memories!
+
 ## Getting Started
 
 This plugin requires Grunt `~0.4.0`.
